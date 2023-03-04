@@ -73,7 +73,12 @@ class _SignupPageState extends State<SignupPage> {
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.all(20.0),
-          child: Column(
+          child: CustomScrollView(
+            scrollDirection: Axis.vertical,
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -240,6 +245,9 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                   ),
                 ],
+              ),
+            ],
+          ),
               ),
             ],
           ),

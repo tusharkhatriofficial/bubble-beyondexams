@@ -47,7 +47,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       Center(
                         child: SvgPicture.asset(
                           "assets/images/hero_1.svg",
-                          height: 280,
+                          height: 240,
                         ),
                       ),
                     ],

@@ -65,143 +65,151 @@ class _LoginPageState extends State<LoginPage> {
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.all(20.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // InkWell(
-                  //   child: Image.asset("assets/images/curved_arrow.png", height: 30.0,),
-                  //   onTap: (){},
-                  // ),
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: Icon(
-                      Icons.arrow_back_ios_new,
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Text(
-                    "Let's sign you in.",
-                    style: GoogleFonts.poppins(
-                        fontSize: 40,
-                        color: Theme.of(context).primaryColor,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    "Welcome Back.\nYou've been missed!",
-                    style: GoogleFonts.poppins(
-                        fontSize: 35, color: Theme.of(context).primaryColor),
-                  ),
-                  const SizedBox(
-                    height: 80.0,
-                  ),
-                  TextField(
-                    controller: _email,
-                    cursorColor: Theme.of(context).primaryColor,
-                    decoration: InputDecoration(
-                      hintText: 'Registered Email',
-                      contentPadding: EdgeInsets.all(24.0),
-                      suffixIcon: IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.email,
-                          color: Theme.of(context).primaryColor,
-                        ),
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(
-                            width: 3, color: Theme.of(context).primaryColor),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20.0,
-                  ),
-                  TextField(
-                    controller: _password,
-                    obscureText: true,
-                    cursorColor: Theme.of(context).primaryColor,
-                    decoration: InputDecoration(
-                      hintText: 'Password',
-                      contentPadding: EdgeInsets.all(24.0),
-                      suffixIcon: IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.password,
-                          color: Theme.of(context).primaryColor,
-                        ),
-                      ),
-                      border: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Theme.of(context).primaryColor),
-                          borderRadius: BorderRadius.circular(12)),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(
-                            width: 3, color: Theme.of(context).primaryColor),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Don't have an account?",
-                        style: GoogleFonts.poppins(fontSize: 16),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) =>  SignupPage()),
-                            );
-                          },
-                          child: Text(
-                            "Sign up",
-                            style: GoogleFonts.poppins(
-                                color: Theme.of(context).primaryColor,
-                                fontSize: 16),
-                          )),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    width: double.infinity,
-                    height: 68,
-                    child: CupertinoButton(
-                      child: Text(
-                        "Sign In",
-                        style: GoogleFonts.poppins(fontSize: 22),
-                      ),
-                      color: Theme.of(context).primaryColor,
-                      borderRadius: BorderRadius.circular(18),
+          child: CustomScrollView(
+            scrollDirection: Axis.vertical,
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // InkWell(
+                    //   child: Image.asset("assets/images/curved_arrow.png", height: 30.0,),
+                    //   onTap: (){},
+                    // ),
+                    IconButton(
                       onPressed: () {
-                        checkValues();
+                        Navigator.pop(context);
                       },
+                      icon: Icon(
+                        Icons.arrow_back_ios_new,
+                        color: Theme.of(context).primaryColor,
+                      ),
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Text(
+                      "Let's sign you in.",
+                      style: GoogleFonts.poppins(
+                          fontSize: 40,
+                          color: Theme.of(context).primaryColor,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      "Welcome Back.\nYou've been missed!",
+                      style: GoogleFonts.poppins(
+                          fontSize: 35, color: Theme.of(context).primaryColor),
+                    ),
+                    const SizedBox(
+                      height: 80.0,
+                    ),
+                    TextField(
+                      controller: _email,
+                      cursorColor: Theme.of(context).primaryColor,
+                      decoration: InputDecoration(
+                        hintText: 'Registered Email',
+                        contentPadding: EdgeInsets.all(24.0),
+                        suffixIcon: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.email,
+                            color: Theme.of(context).primaryColor,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                              width: 3, color: Theme.of(context).primaryColor),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                    TextField(
+                      controller: _password,
+                      obscureText: true,
+                      cursorColor: Theme.of(context).primaryColor,
+                      decoration: InputDecoration(
+                        hintText: 'Password',
+                        contentPadding: EdgeInsets.all(24.0),
+                        suffixIcon: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.password,
+                            color: Theme.of(context).primaryColor,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Theme.of(context).primaryColor),
+                            borderRadius: BorderRadius.circular(12)),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                              width: 3, color: Theme.of(context).primaryColor),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Don't have an account?",
+                          style: GoogleFonts.poppins(fontSize: 16),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>  SignupPage()),
+                              );
+                            },
+                            child: Text(
+                              "Sign up",
+                              style: GoogleFonts.poppins(
+                                  color: Theme.of(context).primaryColor,
+                                  fontSize: 16),
+                            )),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 68,
+                      child: CupertinoButton(
+                        child: Text(
+                          "Sign In",
+                          style: GoogleFonts.poppins(fontSize: 22),
+                        ),
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.circular(18),
+                        onPressed: () {
+                          checkValues();
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
               ),
             ],
           ),
